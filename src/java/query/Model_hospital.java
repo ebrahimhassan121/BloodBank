@@ -183,7 +183,7 @@ public void closeConnection() throws SQLException{
             return states;
         }
     }
-     public ArrayList selectHospitalsByState(String state) throws SQLException {
+    public ArrayList selectHospitalsByState(String state) throws SQLException {
          ResultSet rs = null;
          ArrayList<String> names=new ArrayList<>();
         try {
@@ -204,8 +204,36 @@ public void closeConnection() throws SQLException{
             
         }
     }
-     
-        public int selectHospitalIDByName(String name) throws SQLException {
+    public ResultSet selectHospitalsByStateAndBloodType(String state,String Type) throws SQLException {
+         ResultSet rs = null;
+         ArrayList<String> names=new ArrayList<>();
+        try {
+            connect = cd.check();
+            //String query="select * from `"+ Type+"` where "+ Type+".hospital_id IN (SELECT ID FROM `hospital` WHERE `state`='" + state + "')";
+         String query="select `id`, `name`, `email`, `password`, `state`, `street` FROM `hospital` WHERE (`state` =\"" + state + "\" AND `id` IN ( select `hospital_id` from `"+Type+"` where 1=1 )) ";
+        //    System.out.println(query);
+
+//  String query = "SELECT * FROM `hospital` WHERE `state`='" + state + "' And ";
+            Statement ps = connect.createStatement();
+
+            rs = ps.executeQuery(query);
+//            while(rs.next()){
+//                String name=rs.getString("name");
+//                System.out.println(name);
+//                names.add(name);
+//            }
+//            
+        } catch (SQLException e) {
+            System.out.println("error/n" + e.getMessage());
+        } finally {
+             
+            return rs;
+            
+        }
+    }
+    
+    
+     public int selectHospitalIDByName(String name) throws SQLException {
          ResultSet rs = null;
          int id = 0;
          ArrayList<String> names=new ArrayList<>();

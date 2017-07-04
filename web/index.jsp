@@ -4,6 +4,8 @@
     Author     : ahmed
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="query.Model_hospital"%>
 <%@page import="query.Model_donors"%>
 <%@page import="query.Model_typeblood"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -57,6 +59,43 @@
                             </h6>
                             
                         </div>
+                    </div>
+                    
+                    <div class="col m4  s12 left card green " style="">
+
+                        <h5 class="right white-text" >بحث عن فصيلة دم</h5>
+                        <form style="display: block;" method="post" action="hospitals.jsp">
+
+                            <select class="browser-default" style="" name="government">
+                                <option value="" disabled selected>المحافظة</option>
+                                                                <% 
+                                    Model_hospital MH=new Model_hospital();
+                                    ArrayList<String> arr= MH.selectHospittalStates();
+                                    for(int i=0;i<arr.size();i++){
+                                
+                                %>
+                                <option value="<%=arr.get(i)%>"><%=arr.get(i)%></option> 
+                                
+                                <% } %>
+                            </select>
+                            <br>
+                          
+                            <select class="browser-default" name="type" style="">
+                                <option value="" disabled selected>فصيلة الدم</option>
+                                <option value="A">+A</option>
+                                <option value="B">+B</option>
+                                <option value="O">+O</option>
+                                <option value="AB">+AB</option>            
+                                <option value="NAB">-AB</option>            
+                                <option value="NA">-A</option>
+                                <option value="NB">-B</option>
+                                <option value="NO">-O</option>
+                            </select>
+                            <br>
+                            <button type="submit" class=" btn btn-large col s12 white green-text" >بحث </button>
+                            <br><br><br>
+                        </form>
+                        <br>
                     </div>
                     
                 </div>

@@ -14,7 +14,7 @@
         Model_hospital model_hospital = new Model_hospital();
         Model_Timeclose model_Timeclose = new Model_Timeclose();
         Model_donors model_donors = new Model_donors();
-        ResultSet rs = model_Timeclose.select_timecloseTDI(ssn);
+        ResultSet rs = model_Timeclose.select_timecloseTDI(ssn,1);
 
 
 %>

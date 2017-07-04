@@ -74,11 +74,11 @@ public class Model_Timeclose {
       
       }
       
-       public ResultSet select_timecloseTDI(int id) throws SQLException{
+       public ResultSet select_timecloseTDI(int id,int flag) throws SQLException{
          
         try{
           connect=cd.check();
-         String query="SELECT `time`, `date` , `hospital_id` FROM `timeclose` WHERE `donor_ssn`='"+id+"'";
+         String query="SELECT `time`, `date` , `hospital_id` FROM `timeclose` WHERE `donor_ssn`='"+id+"' AND flag="+flag;
          Statement ps = connect.createStatement();
          
          rs=  ps.executeQuery(query); 
