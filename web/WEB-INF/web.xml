@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>Controller_servlate.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>tests</servlet-name>
+        <servlet-class>Controller_servlate.tests</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tests</servlet-name>
+        <url-pattern>/tests</url-pattern>
+    </servlet-mapping>
+     
+     <context-param>
+        <param-name>host</param-name>
+        <param-value>smtp.gmail.com</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>port</param-name>
+        <param-value>587</param-value>
+    </context-param>
+     <context-param>
+        <param-name>user</param-name>
+        <param-value>bloodbank951@gmail.com</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>1234zxcv</param-value>
+    </context-param>
+    <session-config>
+        <session-timeout>-1</session-timeout>
+</session-config>
+ 
+     
+</web-app>
