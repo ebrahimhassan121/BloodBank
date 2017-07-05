@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     
-                    <div class="col m4  s12 left card green " style="">
+                    <div class="col m4  s12 left card green " required>
 
                         <h5 class="right white-text" >بحث عن فصيلة دم</h5>
                         <form style="display: block;" method="post" action="hospitals.jsp">
@@ -80,7 +80,7 @@
                             </select>
                             <br>
                           
-                            <select class="browser-default" name="type" style="">
+                            <select class="browser-default" name="type" required>
                                 <option value="" disabled selected>فصيلة الدم</option>
                                 <option value="A">+A</option>
                                 <option value="B">+B</option>

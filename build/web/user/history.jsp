@@ -8,9 +8,9 @@
 <%@page import="query.Model_Timeclose"%>
 <%@page import="query.Model_hospital"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%  try { %>
 <%@include file="header.jsp"%>
-<%    try {
+<%   
         Model_hospital model_hospital = new Model_hospital();
         Model_Timeclose model_Timeclose = new Model_Timeclose();
         Model_donors model_donors = new Model_donors();

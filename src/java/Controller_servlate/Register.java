@@ -84,7 +84,7 @@ public class Register extends HttpServlet {
                         x.setEmail(email);
                         x.setPassword(password);
                         x.setBirthdate(birthdate);
-                        x.setPhonrnumber("01060311593");
+                        x.setPhonrnumber("");
                         x.setSsn(ssn);
                         Model_users m=new Model_users();
         try {
